@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjnil2xhaj2rs"]
+
+[ext_resource type="Texture2D" uid="uid://cbvsoel0yh5gh" path="res://tiles/Terrain (16x16).png" id="1_eqgxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7cj0"]
+size = Vector2(46, 47)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4lqu3"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[node name="tiles" type="Node"]
+
+[node name="0" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+texture = ExtResource("1_eqgxv")
+region_enabled = true
+region_rect = Rect2(96, 0, 48, 48)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0/StaticBody2D"]
+shape = SubResource("RectangleShape2D_c7cj0")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="0"]
+occluder = SubResource("OccluderPolygon2D_4lqu3")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(88, 24)
+texture = ExtResource("1_eqgxv")
+region_enabled = true
+region_rect = Rect2(272, 64, 48, 48)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1/StaticBody2D"]
+shape = SubResource("RectangleShape2D_c7cj0")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="1"]
+occluder = SubResource("OccluderPolygon2D_4lqu3")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(152, 24)
+texture = ExtResource("1_eqgxv")
+region_enabled = true
+region_rect = Rect2(96, 128, 48, 48)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_c7cj0")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="2"]
+occluder = SubResource("OccluderPolygon2D_4lqu3")

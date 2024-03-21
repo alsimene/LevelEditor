@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr5erbkse8nlv"]
+
+[ext_resource type="PackedScene" uid="uid://bkf13md7w46dx" path="res://item_platforms.tscn" id="1_0i4wk"]
+[ext_resource type="Texture2D" uid="uid://cd20gkdq0n66h" path="res://ground_grass.png" id="2_gqji5"]
+[ext_resource type="PackedScene" uid="uid://7mio133g27ct" path="res://platform2.tscn" id="3_n61we"]
+
+[node name="Item_platform_2" instance=ExtResource("1_0i4wk")]
+texture = ExtResource("2_gqji5")
+this_scene = ExtResource("3_n61we")

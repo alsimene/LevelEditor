@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2oy8rmtxbdud"]
+
+[ext_resource type="PackedScene" uid="uid://c0eibd8332dv0" path="res://Item_Objects.tscn" id="1_i8she"]
+[ext_resource type="PackedScene" uid="uid://dsv1qiyn5mf0h" path="res://Player.tscn" id="1_j5d3k"]
+[ext_resource type="Script" path="res://Editor_Object.gd" id="2_6w4li"]
+[ext_resource type="Texture2D" uid="uid://dbs7pkjfg5enl" path="res://3.png" id="5_gww4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avc2p"]
+size = Vector2(953.5, 97.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jk7g0"]
+texture = ExtResource("5_gww4f")
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_171ia"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jk7g0")
+
+[node name="world" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(549, 602)
+shape = SubResource("RectangleShape2D_avc2p")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 75.0
+offset_top = 557.0
+offset_right = 1029.0
+offset_bottom = 647.0
+
+[node name="Player" parent="." instance=ExtResource("1_j5d3k")]
+position = Vector2(259, 297)
+
+[node name="level" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="level"]
+tile_set = SubResource("TileSet_171ia")
+format = 2
+
+[node name="Editor_Object" type="Node2D" parent="."]
+script = ExtResource("2_6w4li")
+
+[node name="Sprite2D" type="Sprite2D" parent="Editor_Object"]
+
+[node name="Control" parent="." instance=ExtResource("1_i8she")]

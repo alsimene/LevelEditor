@@ -1,0 +1,159 @@
+[gd_scene load_steps=15 format=3 uid="uid://c0eibd8332dv0"]
+
+[ext_resource type="PackedScene" uid="uid://dti8pmpgk6rlx" path="res://Item_SpikeMan.tscn" id="1_7hjqf"]
+[ext_resource type="Script" path="res://ScrollContainer.gd" id="1_d0wfc"]
+[ext_resource type="Texture2D" uid="uid://cw8pksp4ra8ue" path="res://tiles/row-1-column-1.png" id="3_41tom"]
+[ext_resource type="PackedScene" uid="uid://xrpigg7aebsa" path="res://item_platform_1.tscn" id="3_f3oqa"]
+[ext_resource type="PackedScene" uid="uid://cr5erbkse8nlv" path="res://item_platform_2.tscn" id="4_cmdpy"]
+[ext_resource type="Texture2D" uid="uid://5h4ipot7p1ny" path="res://tiles/row-1-column-2.png" id="4_shu8y"]
+[ext_resource type="Texture2D" uid="uid://drcmuybckikkf" path="res://tiles/row-1-column-3.png" id="5_efasu"]
+[ext_resource type="PackedScene" uid="uid://bxofc8m0ylg70" path="res://item_platform_3.tscn" id="5_ph6lj"]
+[ext_resource type="Texture2D" uid="uid://dlxgstxlkfaic" path="res://tiles/row-2-column-1.png" id="6_xndli"]
+[ext_resource type="Texture2D" uid="uid://ciqb4y2ddc23q" path="res://tiles/row-2-column-2.png" id="7_m828r"]
+[ext_resource type="Texture2D" uid="uid://dkv78eg0qydn2" path="res://tiles/row-2-column-3.png" id="8_e4o52"]
+[ext_resource type="Texture2D" uid="uid://cxoii0rqkn5tc" path="res://tiles/row-3-column-1.png" id="9_486rr"]
+[ext_resource type="Texture2D" uid="uid://dstk8kugapgk4" path="res://tiles/row-3-column-2.png" id="10_20ppt"]
+[ext_resource type="Texture2D" uid="uid://bwc0ff3mrocmb" path="res://tiles/row-3-column-3.png" id="11_6dsgo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 722.0
+offset_top = 8.0
+offset_right = 1143.0
+offset_bottom = 224.0
+
+[node name="Terrain" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Terrain"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 34.0
+offset_right = 399.0
+offset_bottom = 210.0
+script = ExtResource("1_d0wfc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Terrain/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Item_tile0" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("3_41tom")
+this_scene = null
+tile = true
+
+[node name="Item_tile1" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("4_shu8y")
+this_scene = null
+tile = true
+tile_id = 1
+
+[node name="Item_tile2" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("5_efasu")
+this_scene = null
+tile = true
+tile_id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Item_tile0" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("6_xndli")
+this_scene = null
+tile = true
+tile_id = 3
+
+[node name="Item_tile1" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("7_m828r")
+this_scene = null
+tile = true
+tile_id = 4
+
+[node name="Item_tile2" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("8_e4o52")
+this_scene = null
+tile = true
+tile_id = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Item_tile0" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("9_486rr")
+this_scene = null
+tile = true
+tile_id = 6
+
+[node name="Item_tile1" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("10_20ppt")
+this_scene = null
+tile = true
+tile_id = 7
+
+[node name="Item_tile2" parent="TabContainer/Terrain/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+texture = ExtResource("11_6dsgo")
+this_scene = null
+tile = true
+tile_id = 8
+
+[node name="Enemies" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Enemies"]
+layout_mode = 0
+offset_right = 423.0
+offset_bottom = 185.0
+script = ExtResource("1_d0wfc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Enemies/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Enemies/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" parent="TabContainer/Enemies/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_7hjqf")]
+layout_mode = 2
+
+[node name="Platforms" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Platforms"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 41.0
+offset_right = 410.0
+offset_bottom = 207.0
+script = ExtResource("1_d0wfc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Platforms/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Platforms/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Item_platform1" parent="TabContainer/Platforms/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_f3oqa")]
+layout_mode = 2
+
+[node name="Item_platform_2" parent="TabContainer/Platforms/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_cmdpy")]
+layout_mode = 2
+
+[node name="Item_platform3" parent="TabContainer/Platforms/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_ph6lj")]
+layout_mode = 2

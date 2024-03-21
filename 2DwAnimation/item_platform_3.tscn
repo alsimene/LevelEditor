@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxofc8m0ylg70"]
+
+[ext_resource type="PackedScene" uid="uid://bkf13md7w46dx" path="res://item_platforms.tscn" id="1_01kpp"]
+[ext_resource type="Texture2D" uid="uid://de60k4sdeabiq" path="res://ground_stone_small.png" id="2_d47pl"]
+[ext_resource type="PackedScene" uid="uid://bkydjnqsemi7g" path="res://platform3.tscn" id="3_3cqbo"]
+
+[node name="Item_platform3" instance=ExtResource("1_01kpp")]
+texture = ExtResource("2_d47pl")
+this_scene = ExtResource("3_3cqbo")

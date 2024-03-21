@@ -1,0 +1,93 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Texture2D" path="res://tiles/row-1-column-1.png" id="1_jud1j"]
+[ext_resource type="Texture2D" path="res://tiles/row-1-column-2.png" id="2_8uswd"]
+[ext_resource type="Texture2D" path="res://tiles/row-1-column-3.png" id="3_h82aw"]
+[ext_resource type="Texture2D" path="res://tiles/row-2-column-1.png" id="4_5yhdd"]
+[ext_resource type="Texture2D" path="res://tiles/row-2-column-2.png" id="5_nodbr"]
+[ext_resource type="Texture2D" path="res://tiles/row-2-column-3.png" id="6_1to5j"]
+[ext_resource type="Texture2D" path="res://tiles/row-3-column-1.png" id="7_rp42y"]
+[ext_resource type="Texture2D" path="res://tiles/row-3-column-2.png" id="8_nmtnd"]
+[ext_resource type="Texture2D" path="res://tiles/row-3-column-3.png" id="9_mkv3x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mtjf6"]
+texture = ExtResource("1_jud1j")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8s5fk"]
+texture = ExtResource("2_8uswd")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xdsd"]
+texture = ExtResource("3_h82aw")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1037"]
+texture = ExtResource("4_5yhdd")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cc6b2"]
+texture = ExtResource("5_nodbr")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pknlp"]
+texture = ExtResource("6_1to5j")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibxmt"]
+texture = ExtResource("7_rp42y")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ftpp"]
+texture = ExtResource("8_nmtnd")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70t8l"]
+texture = ExtResource("9_mkv3x")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_pyddw"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mtjf6")
+sources/1 = SubResource("TileSetAtlasSource_8s5fk")
+sources/2 = SubResource("TileSetAtlasSource_8xdsd")
+sources/3 = SubResource("TileSetAtlasSource_v1037")
+sources/4 = SubResource("TileSetAtlasSource_cc6b2")
+sources/5 = SubResource("TileSetAtlasSource_pknlp")
+sources/6 = SubResource("TileSetAtlasSource_ibxmt")
+sources/7 = SubResource("TileSetAtlasSource_6ftpp")
+sources/8 = SubResource("TileSetAtlasSource_70t8l")
+
+[node name="level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_pyddw")
+format = 2
+layer_0/tile_data = PackedInt32Array(458790, 0, 0, 458789, 0, 0, 458788, 0, 0, 458787, 0, 0, 458786, 0, 0, 458784, 0, 0, 458783, 0, 0, 524318, 0, 0, 524317, 0, 0, 524316, 0, 0, 589851, 0, 0, 589850, 0, 0, 720921, 0, 0, 786455, 0, 0, 851990, 0, 0, 917526, 0, 0, 1048597, 0, 0, 1114133, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1245208, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245213, 0, 0, 1245215, 0, 0, 1310752, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1179684, 0, 0, 1114148, 0, 0, 1048612, 0, 0, 983075, 0, 0, 852002, 0, 0, 786466, 0, 0, 655392, 0, 0, 655391, 0, 0, 589854, 0, 0, 524315, 0, 0, 524313, 0, 0, 589849, 0, 0, 655384, 0, 0, 655383, 0, 0, 720919, 0, 0, 851992, 0, 0, 851993, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 852001, 0, 0, 852000, 0, 0, 786464, 0, 0, 786463, 0, 0, 786462, 0, 0, 720925, 0, 0, 720923, 0, 0, 655387, 0, 0, 655364, 0, 0, 720928, 0, 0)

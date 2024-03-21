@@ -1,0 +1,194 @@
+[gd_scene load_steps=26 format=3 uid="uid://c2oy8rmtxbdud"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_50hik"]
+[ext_resource type="PackedScene" uid="uid://c0eibd8332dv0" path="res://Item_Objects.tscn" id="1_i8she"]
+[ext_resource type="PackedScene" uid="uid://dsv1qiyn5mf0h" path="res://Player.tscn" id="1_j5d3k"]
+[ext_resource type="Script" path="res://Editor_Object.gd" id="2_6w4li"]
+[ext_resource type="Texture2D" uid="uid://cw8pksp4ra8ue" path="res://tiles/row-1-column-1.png" id="2_fvst5"]
+[ext_resource type="Texture2D" uid="uid://5h4ipot7p1ny" path="res://tiles/row-1-column-2.png" id="3_fxx2u"]
+[ext_resource type="Texture2D" uid="uid://drcmuybckikkf" path="res://tiles/row-1-column-3.png" id="4_yemuk"]
+[ext_resource type="Texture2D" uid="uid://dlxgstxlkfaic" path="res://tiles/row-2-column-1.png" id="5_iqkam"]
+[ext_resource type="Texture2D" uid="uid://ciqb4y2ddc23q" path="res://tiles/row-2-column-2.png" id="6_ggr3d"]
+[ext_resource type="Texture2D" uid="uid://dkv78eg0qydn2" path="res://tiles/row-2-column-3.png" id="7_khjgc"]
+[ext_resource type="Texture2D" uid="uid://cxoii0rqkn5tc" path="res://tiles/row-3-column-1.png" id="8_cy2ux"]
+[ext_resource type="Texture2D" uid="uid://dstk8kugapgk4" path="res://tiles/row-3-column-2.png" id="9_gh43y"]
+[ext_resource type="Texture2D" uid="uid://bwc0ff3mrocmb" path="res://tiles/row-3-column-3.png" id="10_kv4gu"]
+[ext_resource type="Texture2D" uid="uid://c7e3vr6iccw1o" path="res://reset_button.png" id="14_nqvt0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avc2p"]
+size = Vector2(953.5, 97.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mtjf6"]
+texture = ExtResource("2_fvst5")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8s5fk"]
+texture = ExtResource("3_fxx2u")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xdsd"]
+texture = ExtResource("4_yemuk")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1037"]
+texture = ExtResource("5_iqkam")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cc6b2"]
+texture = ExtResource("6_ggr3d")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pknlp"]
+texture = ExtResource("7_khjgc")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibxmt"]
+texture = ExtResource("8_cy2ux")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ftpp"]
+texture = ExtResource("9_gh43y")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70t8l"]
+texture = ExtResource("10_kv4gu")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_pyddw"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mtjf6")
+sources/1 = SubResource("TileSetAtlasSource_8s5fk")
+sources/2 = SubResource("TileSetAtlasSource_8xdsd")
+sources/3 = SubResource("TileSetAtlasSource_v1037")
+sources/4 = SubResource("TileSetAtlasSource_cc6b2")
+sources/5 = SubResource("TileSetAtlasSource_pknlp")
+sources/6 = SubResource("TileSetAtlasSource_ibxmt")
+sources/7 = SubResource("TileSetAtlasSource_6ftpp")
+sources/8 = SubResource("TileSetAtlasSource_70t8l")
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_50hik")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(549, 602)
+shape = SubResource("RectangleShape2D_avc2p")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 75.0
+offset_top = 557.0
+offset_right = 1029.0
+offset_bottom = 647.0
+
+[node name="Player" parent="." instance=ExtResource("1_j5d3k")]
+position = Vector2(232, 432)
+
+[node name="level" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="level"]
+tile_set = SubResource("TileSet_pyddw")
+format = 2
+
+[node name="Editor_Object" type="Node2D" parent="."]
+script = ExtResource("2_6w4li")
+
+[node name="Sprite2D" type="Sprite2D" parent="Editor_Object"]
+
+[node name="Control" parent="." instance=ExtResource("1_i8she")]
+
+[node name="Reset" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 82.0
+offset_bottom = 90.0
+icon = ExtResource("14_nqvt0")
+flat = true
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 128.0
+offset_right = 55.0
+offset_bottom = 159.0
+scale = Vector2(1.75894, 2.03582)
+text = "Menu
+"
+
+[node name="MenuPanel" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="MenuPanel"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SaveSlot1" type="Button" parent="MenuPanel/Panel"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 152.0
+offset_right = 626.0
+offset_bottom = 202.0
+theme_override_font_sizes/font_size = 30
+text = "Save Slot 1"
+
+[node name="LoadingSlot1" type="Button" parent="MenuPanel/Panel"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 248.0
+offset_right = 648.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 30
+text = "Loading Slot 1"
+
+[node name="DeleteSlot1" type="Button" parent="MenuPanel/Panel"]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 352.0
+offset_right = 638.0
+offset_bottom = 402.0
+theme_override_font_sizes/font_size = 30
+text = "Delete Slot 1"
+
+[node name="Cancel" type="Button" parent="MenuPanel/Panel"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 448.0
+offset_right = 594.0
+offset_bottom = 498.0
+theme_override_font_sizes/font_size = 30
+text = "Cancel"
+
+[connection signal="pressed" from="Reset" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MenuPanel/Panel/SaveSlot1" to="." method="_on_save_slot_1_pressed"]
+[connection signal="pressed" from="MenuPanel/Panel/LoadingSlot1" to="." method="_on_loading_slot_1_pressed"]
+[connection signal="pressed" from="MenuPanel/Panel/Cancel" to="." method="_on_cancel_pressed"]

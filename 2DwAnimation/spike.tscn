@@ -1,0 +1,144 @@
+[gd_scene load_steps=12 format=3 uid="uid://d34laowq5blx4"]
+
+[ext_resource type="Script" path="res://spike.gd" id="1_10slg"]
+[ext_resource type="Texture2D" uid="uid://58x1i8fjnob8" path="res://kenney_jumper-pack/PNG/Enemies/spikeMan_stand.png" id="2_o8nm1"]
+[ext_resource type="Texture2D" uid="uid://d4baf3r2vyir5" path="res://kenney_jumper-pack/PNG/Enemies/spikeMan_walk1.png" id="3_w5v8e"]
+[ext_resource type="Texture2D" uid="uid://bnddtunivk1wa" path="res://kenney_jumper-pack/PNG/Enemies/spikeMan_walk2.png" id="4_q4cv4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc1g6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o8nm1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w5v8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q4cv4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ui2m4"]
+radius = 12.0
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_pf3dw"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1tjsd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_8hdyw"]
+resource_name = "fall"
+
+[sub_resource type="Animation" id="Animation_loj22"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oudwl"]
+_data = {
+"Idle": SubResource("Animation_pf3dw"),
+"RESET": SubResource("Animation_1tjsd"),
+"fall": SubResource("Animation_8hdyw"),
+"walk": SubResource("Animation_loj22")
+}
+
+[node name="Spike" type="CharacterBody2D"]
+script = ExtResource("1_10slg")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.3125, 0.294025)
+sprite_frames = SubResource("SpriteFrames_dc1g6")
+animation = &"walk"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -5)
+shape = SubResource("CapsuleShape2D_ui2m4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oudwl")
+}
+autoplay = "Idle"
+
+[node name="EdgeDetector" type="RayCast2D" parent="."]
+position = Vector2(-13, 0)
+target_position = Vector2(0, 20)
+
+[node name="CollisionDetector" type="RayCast2D" parent="."]
+position = Vector2(-13, 0)
+target_position = Vector2(-12, 0)

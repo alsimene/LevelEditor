@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://xrpigg7aebsa"]
+
+[ext_resource type="PackedScene" uid="uid://bkf13md7w46dx" path="res://item_platforms.tscn" id="1_jyp3q"]
+[ext_resource type="Texture2D" uid="uid://dhbayidlr31n6" path="res://ground_wood_small_broken.png" id="2_rxywj"]
+[ext_resource type="PackedScene" uid="uid://n5jimss8n821" path="res://platform.tscn" id="3_ppy1w"]
+
+[node name="Item_platform1" instance=ExtResource("1_jyp3q")]
+texture = ExtResource("2_rxywj")
+this_scene = ExtResource("3_ppy1w")
